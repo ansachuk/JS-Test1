@@ -1,0 +1,20 @@
+body {
+    color: #ffa600;
+    background-color: #3d3d3d;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+
+ul {
+    list-style: circle;
+}
+
+a {
+    color: rgb(0, 219, 219);
+    text-decoration: none;
+}
+
+a:hover {
+    color: teal;
+    text-decoration: underline;
+}
