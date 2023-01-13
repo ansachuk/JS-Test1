@@ -32,12 +32,12 @@ if (price <= balance) {
   const agree = Boolean(confirm("Are you sure?"));
 
   if (agree === true) {
-    console.log("Success");
-    console.log(`On your balance you have ${balance}$`);
-    console.log("Thank you for buying our products! Good luck!");
+    alert(
+      `Success.On your balance you have ${balance}$.Thank you for buying our products! Good luck!`
+    );
   } else {
-    console.log("Order canceled( Try again...");
+    alert("Order canceled( Try again...");
   }
 } else {
-  console.log("Not enough credits(");
+  alert("Not enough credits(");
 }
