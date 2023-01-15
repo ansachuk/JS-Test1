@@ -1,12 +1,15 @@
 //1.vars
-let number = 30;
-let minNumber = number - 1;
+let number = 600851475143;
 
-for (let i = minNumber; i > 1; i = i - 1) {
+for (let i = number - 1; i > 1; i -= 1) {
   if (number % i === 0) {
-    console.log(i);
-  } else {
-    console.log("nems");
+    number = i;
+    for (let j = number; j > 1; j -= 1) {
+      if (number % j !== 0) {
+        console.log(number);
+        break;
+      }
+    }
   }
 }
 //2.Знайти прості дільники
