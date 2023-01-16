@@ -1,12 +1,15 @@
-const name = "an";
-const age = 21;
-
-const userProfile = {
-  name,
-  age,
-  funk() {
-    console.log("fuck you");
-  },
+const post = {
+  title: "title",
+  age: 21,
+  isOpen: true,
 };
 
-console.log(userProfile.funk());
+console.log(post);
+
+const post2 = Object.assign({}, post);
+
+console.log(post2);
+
+post2.isOpen = false;
+
+console.log(post2);
