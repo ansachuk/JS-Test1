@@ -1,4 +1,4 @@
-/* Method Join, Split and For...It loop */
+// Method Join, Split and For...It loop
 
 const string = prompt("Enter your word:");
 
@@ -8,10 +8,20 @@ const letters = string.split("");
 // console.log(letters);
 
 for (const letter of letters) {
-  if (letter === letter.toUpperCase()) {
-    newString += letter.toLowerCase();
-  } else {
-    newString += letter.toUpperCase();
-  }
+  newString +=
+    letter === letter.toUpperCase()
+      ? letter.toLowerCase()
+      : letter.toUpperCase();
 }
+
+//ANOTHER OPTION
+
+// for (const letter of letters) {
+//   if (letter === letter.toUpperCase()) {
+//     newString += letter.toLowerCase();
+//   } else {
+//     newString += letter.toUpperCase();
+//   }
+// }
+
 console.log(newString);
