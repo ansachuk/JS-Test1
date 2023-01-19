@@ -1,20 +1,44 @@
-let number = 600851475143;
+// let number = 4456754;
+//600851475143
 
-for (let i = 2; i < number; i += 1) {
-  if (number % i === 0) {
-    number /= i;
-    console.log(number);
-    for (let i = 2; i < number; i += 1) {
-      if (number % i === 0) {
-        number /= i;
-        console.log(number);
-        for (let i = 2; i < number; i += 1) {
-          if (number % i === 0) {
-            number /= i;
-            console.log(number);
-          }
-        }
-      }
+const biggestDevides = function (number) {
+  for (let i = 2; i < number; i += 1) {
+    if (number % i === 0) {
+      number /= i;
+      // console.log(i);
     }
   }
-}
+  return `Самый больщлй простой делитель: ${number}`;
+};
+
+// console.log(biggestDevides(9458101));
+console.log(biggestDevides(600851475143));
+
+// console.log(number);
+// console.log(i);
+
+//     for (let i = 2; i < number; i += 1) {
+//       if (number % i === 0) {
+//         number /= i;
+
+//         console.log(number);
+//         console.log(i);
+
+//         for (let i = 2; i < number; i += 1) {
+//           if (number % i === 0) {
+//             number /= i;
+
+//             console.log(number);
+//             console.log(i);
+//             for (let i = 2; i < number; i += 1) {
+//               if (number % i === 0) {
+//                 number /= i;
+//                 console.log(number);
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

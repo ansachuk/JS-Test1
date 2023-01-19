@@ -5,7 +5,7 @@ let sum = 0;
 const number = 4000000;
 
 do {
-  //   console.log(c);
+  // console.log(c);
   c = a + b;
   a = b;
   b = c;
