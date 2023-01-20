@@ -1,18 +1,15 @@
-function calculateEngravingPrice(message, pricePerWord) {
+function makeArray(firstArray, secondArray, maxLength) {
   // Change code below this line
-
-  const totalPrice = message.split(" ").length * pricePerWord;
-  return totalPrice;
+  const newArray = firstArray.concat(secondArray);
+  console.log(newArray);
+  return newArray.slice(0, maxLength);
 
   // Change code above this line
 }
 
-const arr1 = "Hello";
-const arr2 = "Hello and";
-const arr3 = "Hello and Hi";
-const arr4 = "Hello and Hi everyone";
+const arr1 = [1, 2, 3, 4];
+const arr2 = [5, 6, 7, 8, 9];
 
-console.log(calculateEngravingPrice(arr1, 50));
-console.log(calculateEngravingPrice(arr2, 50));
-console.log(calculateEngravingPrice(arr3, 50));
-console.log(calculateEngravingPrice(arr4, 50));
+console.log(makeArray(arr1, arr2, 3));
+console.log(makeArray(arr1, arr2, 4));
+console.log(makeArray(arr1, arr2, 5));
