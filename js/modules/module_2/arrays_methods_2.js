@@ -1,15 +1,18 @@
-function makeArray(firstArray, secondArray, maxLength) {
-  // Change code below this line
-  const newArray = firstArray.concat(secondArray);
-  console.log(newArray);
-  return newArray.slice(0, maxLength);
+function findLongestWord(string) {
+  const words = string.split(" ");
+  let LongestWord = words[0];
 
-  // Change code above this line
+  for (let i = 0; i < words.length; i += 1) {
+    let word = words[i];
+
+    if (LongestWord.length < word.length) {
+      LongestWord = words[i];
+    }
+  }
+
+  return LongestWord;
 }
 
-const arr1 = [1, 2, 3, 4];
-const arr2 = [5, 6, 7, 8, 9];
-
-console.log(makeArray(arr1, arr2, 3));
-console.log(makeArray(arr1, arr2, 4));
-console.log(makeArray(arr1, arr2, 5));
+console.log(findLongestWord("hello world uydururuywuy"));
+console.log(findLongestWord("hello world sit"));
+console.log(findLongestWord("hello world transaction"));
