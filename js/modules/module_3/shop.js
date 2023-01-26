@@ -12,11 +12,13 @@ const allProducts = [
   { icon: "🥥", name: "coconut", price: 70 },
 ];
 
+console.table(allProducts);
+
 const cart = {
   items: [],
 
   getItems() {
-    return this.items;
+    console.table(this.items);
   },
 
   add(product) {
@@ -27,24 +29,54 @@ const cart = {
     }
   },
 
-  remove(productName) {},
-  //   clear() {},
-  //   countTotalPrice() {},
-  //   remove(productName) {},
+  remove(productName) {
+    let newItems = [];
+    for (let element of this.items) {
+      const { name, icon } = element;
+      if (productName !== name && productName !== icon) {
+        // console.log(icon, name, productName !== name || productName !== icon);
+        // console.log(productName !== icon);
+        newItems.push(element);
+        this.items = newItems;
+      }
+    }
+  },
+  clear() {
+    this.items.splice(0, this.items.length);
+  },
+  //   countTotalPrice() {
+  //     let totalPrise;
+  //     for (const element of this.items) {
+  //       const { price } = element;
+  //       totalPrise += price;
+  //     }
+  //     console.log(totalPrise);
+  //   },
   //   increaseQuantity(productName) {},
   //   decreaseQuantity(productName) {},
 };
 
+cart.add("🍊");
+cart.add("peech");
+
+cart.clear();
+
 cart.add("🍎");
 cart.add("🍐");
 cart.add("🍊");
-cart.add("🍑");
-console.log(cart.add("appler"));
+cart.add("peech");
+cart.add("coconut");
+cart.add("🍇");
+cart.add("watermelon");
 
-console.table(cart.getItems());
+cart.getItems();
 
+// debugger;
+
+cart.remove("pear");
 cart.remove("🍎");
 cart.remove("🍇");
-cart.remove("peech");
+cart.remove("🍑");
 
-// console.table(cart.getItems());
+cart.getItems();
+cart.countTotalPrice();
