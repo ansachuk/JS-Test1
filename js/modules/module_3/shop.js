@@ -12,7 +12,7 @@ const allProducts = [
   { icon: "🥥", name: "coconut", price: 70 },
 ];
 
-console.table(allProducts);
+// console.table(allProducts);
 
 const cart = {
   items: [],
@@ -49,20 +49,36 @@ const cart = {
   countTotalPrice() {
     let totalPrise = 0;
     for (const element of this.items) {
-      const { price } = element;
-      totalPrise += price;
+      const { price, quantity } = element;
+      totalPrise += price * quantity;
     }
     console.log(totalPrise);
   },
 
-  //   increaseQuantity(productName) {},
+  increaseQuantity(productName) {
+    for (let element of this.items) {
+      const { name, icon, quantity } = element;
+      if (productName === name || productName === icon) {
+        quantity += 1;
+        let currentQuanity = quantity;
+        currentQuanity += 1;
+        quantity = currentQuanity;
+        this.items[{ ...element, quantity: currentQuanity }];
+      }
+    }
+  },
+
   //   decreaseQuantity(productName) {},
 };
 
 cart.add("🍊");
 cart.add("peech");
 
+// cart.getItems();
+
 cart.clear();
+
+// cart.getItems();
 
 cart.add("🍎");
 cart.add("🍐");
@@ -72,15 +88,17 @@ cart.add("coconut");
 cart.add("🍇");
 cart.add("watermelon");
 
-cart.getItems();
+// cart.getItems();
 
 cart.remove("pear");
 cart.remove("🍎");
 cart.remove("🍇");
 cart.remove("🍑");
-
 cart.getItems();
 
 // debugger;
+cart.increaseQuantity("watermelon");
+
+cart.getItems();
 
 cart.countTotalPrice();
