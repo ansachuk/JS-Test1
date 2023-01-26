@@ -41,17 +41,20 @@ const cart = {
       }
     }
   },
+
   clear() {
     this.items.splice(0, this.items.length);
   },
-  //   countTotalPrice() {
-  //     let totalPrise;
-  //     for (const element of this.items) {
-  //       const { price } = element;
-  //       totalPrise += price;
-  //     }
-  //     console.log(totalPrise);
-  //   },
+
+  countTotalPrice() {
+    let totalPrise = 0;
+    for (const element of this.items) {
+      const { price } = element;
+      totalPrise += price;
+    }
+    console.log(totalPrise);
+  },
+
   //   increaseQuantity(productName) {},
   //   decreaseQuantity(productName) {},
 };
@@ -71,12 +74,13 @@ cart.add("watermelon");
 
 cart.getItems();
 
-// debugger;
-
 cart.remove("pear");
 cart.remove("🍎");
 cart.remove("🍇");
 cart.remove("🍑");
 
 cart.getItems();
+
+// debugger;
+
 cart.countTotalPrice();
