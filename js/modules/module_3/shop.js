@@ -12,7 +12,7 @@ const allProducts = [
   { icon: "🥥", name: "coconut", price: 70 },
 ];
 
-console.table(allProducts);
+// console.table(allProducts);
 
 const cart = {
   items: [],
@@ -23,7 +23,8 @@ const cart = {
 
   add(product) {
     for (let element of allProducts) {
-      if (element.name === product || element.icon === product) {
+      let { name, icon } = element;
+      if (name === product || icon === product) {
         this.items.push({ ...element, quantity: 1 });
       }
     }
@@ -102,17 +103,14 @@ cart.add("peach");
 cart.add("🍎");
 cart.add("🍏");
 
-// cart.getItems();
-
 cart.increaseQuantity("🍎");
 cart.increaseQuantity("peach");
 cart.increaseQuantity("peach");
 
-// cart.getItems();
-
-// cart.countTotalPrice();
-// cart.remove("apple");
 cart.decreaseQuantity("apple");
+
 cart.increaseQuantity("green apple");
+
 cart.getItems();
+
 cart.countTotalPrice();

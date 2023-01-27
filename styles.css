@@ -18,3 +18,16 @@ a:hover {
     color: teal;
     text-decoration: underline;
 }
+
+.shop__list {
+    list-style: square;
+}
+
+.shop__item {
+    color: rgb(0, 219, 219);
+}
+
+.shop__item:hover {
+    color: teal;
+    cursor: pointer;
+}
