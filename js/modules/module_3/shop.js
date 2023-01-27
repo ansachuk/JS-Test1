@@ -15,7 +15,7 @@ const allProducts = [
 // console.table(allProducts);
 
 const cart = {
-  items: [],
+  items: [{ icon: "🍐", name: "pear", price: 25 }],
 
   getItems() {
     console.table(this.items);
@@ -24,6 +24,7 @@ const cart = {
   add(product) {
     for (let element of allProducts) {
       let { name, icon } = element;
+
       if (name === product || icon === product) {
         this.items.push({ ...element, quantity: 1 });
       }
@@ -34,9 +35,12 @@ const cart = {
     let newItems = [];
     for (let element of this.items) {
       const { name, icon } = element;
+
+      // if (productName === name && productName === icon) {
+      //   items.splice(items.indexOf(element), 1);
+      // }
+
       if (productName !== name && productName !== icon) {
-        // console.log(icon, name, productName !== name || productName !== icon);
-        // console.log(productName !== icon);
         newItems.push(element);
         this.items = newItems;
       }
@@ -44,26 +48,23 @@ const cart = {
   },
 
   clear() {
-    this.items.splice(0, this.items.length);
+    this.items = [];
   },
 
   countTotalPrice() {
     let totalPrise = 0;
-    for (const element of this.items) {
-      const { price, quantity } = element;
+    for (const { price, quantity } of this.items) {
       totalPrise += price * quantity;
     }
     console.log(totalPrise);
   },
 
   increaseQuantity(productName) {
-    for (let element of this.items) {
-      let { name, icon, quantity } = element;
+    const { items } = this;
+    for (let element of items) {
+      let { name, icon } = element;
       if (productName === name || productName === icon) {
-        let currentQuantity = quantity;
-        currentQuantity += 1;
-        const index = this.items.indexOf(element);
-        this.items.splice(index, 1, { ...element, quantity: currentQuantity });
+        element.quantity += 1;
       }
     }
   },
@@ -74,17 +75,10 @@ const cart = {
 
       if (productName === name || productName === icon) {
         if (quantity > 1) {
-          let currentQuantity = quantity;
-
-          currentQuantity -= 1;
-          const index = this.items.indexOf(element);
-          this.items.splice(index, 1, {
-            ...element,
-            quantity: currentQuantity,
-          });
-        } else {
-          cart.remove(element);
+          element.quantity -= 1;
+          return;
         }
+        cart.remove(productName);
       }
     }
   },

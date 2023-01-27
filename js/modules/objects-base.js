@@ -25,3 +25,12 @@ const book = {
   rating: 8.9,
   pagesCount: 409,
 };
+
+const obj = { keys: {} };
+
+obj.key1 = 1;
+obj.key2 = 2;
+obj.keys.key3 = 3;
+obj.keys.key4 = 4;
+console.log(obj);
+console.log("key3" in obj.keys);
