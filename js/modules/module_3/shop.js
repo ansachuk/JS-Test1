@@ -7,12 +7,12 @@ const allProducts = [
   { icon: "🍌", name: "banana", price: 40 },
   { icon: "🍉", name: "watermelon", price: 30 },
   { icon: "🍇", name: "vine", price: 25 },
-  { icon: "🍒", name: "strawberry", price: 30 },
-  { icon: "🍑", name: "peech", price: 50 },
+  { icon: "🍒", name: "cherry", price: 30 },
+  { icon: "🍑", name: "peach", price: 50 },
   { icon: "🥥", name: "coconut", price: 70 },
 ];
 
-// console.table(allProducts);
+console.table(allProducts);
 
 const cart = {
   items: [],
@@ -57,13 +57,12 @@ const cart = {
 
   increaseQuantity(productName) {
     for (let element of this.items) {
-      const { name, icon, quantity } = element;
+      let { name, icon, quantity } = element;
       if (productName === name || productName === icon) {
-        quantity += 1;
-        let currentQuanity = quantity;
-        currentQuanity += 1;
-        quantity = currentQuanity;
-        this.items[{ ...element, quantity: currentQuanity }];
+        let currentQuantity = quantity;
+        currentQuantity += 1;
+        const index = this.items.indexOf(element);
+        this.items.splice(index, 1, { ...element, quantity: currentQuantity });
       }
     }
   },
@@ -71,34 +70,29 @@ const cart = {
   //   decreaseQuantity(productName) {},
 };
 
-cart.add("🍊");
-cart.add("peech");
-
-// cart.getItems();
+cart.add("pear");
+cart.add("lemon");
+cart.add("watermelon");
 
 cart.clear();
 
-// cart.getItems();
+cart.add("coconut");
+cart.add("cherry");
+cart.add("peach");
 
 cart.add("🍎");
-cart.add("🍐");
-cart.add("🍊");
-cart.add("peech");
-cart.add("coconut");
-cart.add("🍇");
-cart.add("watermelon");
+cart.add("🍏");
 
 // cart.getItems();
 
-cart.remove("pear");
-cart.remove("🍎");
-cart.remove("🍇");
-cart.remove("🍑");
+// cart.increaseQuantity("🍎");
+cart.increaseQuantity("peach");
+cart.increaseQuantity("peach");
+
+// cart.getItems();
+
+// cart.countTotalPrice();
+// cart.remove("apple");
+cart.increaseQuantity("green apple");
 cart.getItems();
-
-// debugger;
-cart.increaseQuantity("watermelon");
-
-cart.getItems();
-
 cart.countTotalPrice();
