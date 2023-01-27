@@ -67,7 +67,26 @@ const cart = {
     }
   },
 
-  //   decreaseQuantity(productName) {},
+  decreaseQuantity(productName) {
+    for (let element of this.items) {
+      let { name, icon, quantity } = element;
+
+      if (productName === name || productName === icon) {
+        if (quantity > 1) {
+          let currentQuantity = quantity;
+
+          currentQuantity -= 1;
+          const index = this.items.indexOf(element);
+          this.items.splice(index, 1, {
+            ...element,
+            quantity: currentQuantity,
+          });
+        } else {
+          cart.remove(element);
+        }
+      }
+    }
+  },
 };
 
 cart.add("pear");
@@ -85,7 +104,7 @@ cart.add("🍏");
 
 // cart.getItems();
 
-// cart.increaseQuantity("🍎");
+cart.increaseQuantity("🍎");
 cart.increaseQuantity("peach");
 cart.increaseQuantity("peach");
 
@@ -93,6 +112,7 @@ cart.increaseQuantity("peach");
 
 // cart.countTotalPrice();
 // cart.remove("apple");
+cart.decreaseQuantity("apple");
 cart.increaseQuantity("green apple");
 cart.getItems();
 cart.countTotalPrice();
