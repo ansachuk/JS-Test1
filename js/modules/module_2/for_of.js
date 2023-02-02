@@ -6,9 +6,9 @@ const numbers1 = [2, 4, 6, 2, 14, 76];
 const sumOfArray = function (array) {
   let sum = 0;
 
-  for (let arrayItem of array) {
-    if (arrayItem % 2 === 0) {
-      sum += arrayItem;
+  for (let el of array) {
+    if (el % 2 === 0) {
+      sum += el;
     }
   }
 

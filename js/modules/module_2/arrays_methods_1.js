@@ -25,7 +25,7 @@
 //   }
 // }
 
-const reversCase = function (string) {
+const reversCase = (string) => {
   switch (string) {
     case null:
       return "Operation is cancelled!";

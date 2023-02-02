@@ -115,3 +115,20 @@ console.log(
   includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus")
 );
 console.log(includes(["apple", "plum", "pear", "orange"], "plum"));
+
+const testArray = [1, 2, 3, 4, 5, 6];
+// console.table(testArray);
+
+testArray.push(7, 8, 9);
+// console.table(testArray);
+
+testArray.pop();
+testArray.pop();
+testArray.pop();
+// console.table(testArray);
+
+testArray.unshift(10, 11, 12, 13);
+// console.table(testArray);
+
+testArray.shift();
+// console.table(testArray);
