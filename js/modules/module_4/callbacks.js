@@ -1,18 +1,21 @@
 //Callbacks it is call function in another function
 
-var someArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const someArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-var filter = function (array, num) {
-  var filteredArray = [];
-  for (const el of array) {
-    if ((el, num) => el >= num) {
-      filteredArray.push(el);
-    }
-  }
-  return filteredArray;
-};
+// const moreThanThree = (el) => el > 3;
+// const moreThanFour = (el) => el > 4;
+// const moreThanFive = (el) => el > 5;
 
-console.log(filter(someArray, 3));
+// const filter = function (array, callback) {
+//   const filteredArray = [];
+//   for (const el of array) {
+//     if (callback(el)) {
+//       filteredArray.push(el);
+//     }
+//   }
+//   return filteredArray;
+// };
 
-const fnA = (a) => a * 54;
-console.log(fnA(3));
+// console.log(filter(someArray, moreThanThree));
+// console.log(filter(someArray, moreThanFour));
+// console.log(filter(someArray, moreThanFive));
