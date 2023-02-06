@@ -1,6 +1,22 @@
-// Напишіть код, щоб видалити всі елементи в заданому масиві
-// Функція `deleteElement()` видаляє всі входження елемента із заданого масиву.
+const pizzaPalace = {
+  pizzas: ["Ultracheese", "Smoked", "Four meats"],
+  order(pizzaName, onSuccess, onError) {
+    if (this.pizzas.includes(pizzaName)) {
+      return onSuccess(pizzaName);
+    }
+    return onError(
+      `There is no pizza with a name ${pizzaName} in the assortment.`
+    );
+  },
+};
 
-let arr = [23, 56, 4, 78, 5, 63, 45, 210, 56];
-// arr = deleteElement(arr, 56);
-console.log(arr); //[23, 4, 78, 5, 63, 45, 210]
+const makePizza = (pizzaName) =>
+  `Your order is accepted. Cooking pizza ${pizzaName}.`;
+
+const onOrderError = (error) => `Error! ${error}`;
+
+// Method calls with callbacks
+console.log(pizzaPalace.order("Smoked", makePizza, onOrderError));
+console.log(pizzaPalace.order("Four meats", makePizza, onOrderError));
+console.log(pizzaPalace.order("Big Mike", makePizza, onOrderError));
+console.log(pizzaPalace.order("Vienna", makePizza, onOrderError));
