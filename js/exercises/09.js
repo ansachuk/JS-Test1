@@ -7,7 +7,6 @@ const arr = [
     isActive: false,
     balance: 2811,
     gender: "male",
-    age: 37,
   },
   {
     name: "Sharlene Bush",
@@ -17,7 +16,6 @@ const arr = [
     isActive: true,
     balance: 3821,
     gender: "female",
-    age: 34,
   },
   {
     name: "Ross Vazquez",
@@ -27,7 +25,6 @@ const arr = [
     isActive: false,
     balance: 3793,
     gender: "male",
-    age: 24,
   },
   {
     name: "Elma Head",
@@ -37,7 +34,6 @@ const arr = [
     isActive: true,
     balance: 2278,
     gender: "female",
-    age: 21,
   },
   {
     name: "Carey Barr",
@@ -47,7 +43,6 @@ const arr = [
     isActive: true,
     balance: 3951,
     gender: "male",
-    age: 27,
   },
   {
     name: "Blackburn Dotson",
@@ -57,7 +52,6 @@ const arr = [
     isActive: false,
     balance: 1498,
     gender: "male",
-    age: 38,
   },
   {
     name: "Sheree Anthony",
@@ -67,12 +61,7 @@ const arr = [
     isActive: true,
     balance: 2764,
     gender: "female",
-    age: 39,
   },
 ];
-const getFriends = (users) =>
-  users
-    .flatMap(({ friends }) => friends)
-    .filter((el, ind, arr) => ind === arr.indexOf(el));
 
-console.log(getFriends(arr));
+console.log();
