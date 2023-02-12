@@ -29,14 +29,8 @@ const theDarkTower = {
   },
 };
 
-console.log(theDarkTower.getAllBooks());
-console.log(theDarkTower.getAuthor());
-console.log(theDarkTower.getAllSpinoff());
+// console.log(theDarkTower.getAllBooks());
+// console.log(theDarkTower.getAuthor());
+// console.log(theDarkTower.getAllSpinoff());
 
-console.log(theDarkTower.getBookByNumber(4));
-
-const fnA = function () {
-  return this;
-};
-
-console.log(fnA());
+// console.log(theDarkTower.getBookByNumber(4))
