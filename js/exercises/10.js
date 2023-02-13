@@ -1,30 +1,26 @@
-const customer = {
-  username: "Mango",
-  balance: 24000,
-  discount: 0.1,
-  orders: ["Burger", "Pizza", "Salad"],
+const historyService = {
+  orders: [
+    { email: "jacob@hotmail.com", dish: "Burrito" },
+    { email: "solomon@topmail.net", dish: "Burger" },
+    { email: "artemis@coldmail.net", dish: "Pizza" },
+    { email: "solomon@topmail.net", dish: "Apple pie" },
+    { email: "jacob@hotmail.com", dish: "Taco" },
+  ],
   // Change code below this line
-  getBalance() {
-    return this.balance;
+  getOrdersLog() {
+    return this.orders
+      .map((order) => `email: ${order.email} dish: ${order.dish}`)
+      .join(" - ");
   },
-  getDiscount() {
-    return this.discount;
+  getEmails() {
+    const emails = this.orders.map((order) => order.email);
+    const uniqueEmails = new Set(emails);
+    return [...uniqueEmails];
   },
-  setDiscount(value) {
-    this.discount = value;
-  },
-  getOrders() {
-    return this.orders;
-  },
-  addOrder(cost, order) {
-    this.balance -= cost - cost * this.discount;
-    this.orders.push(order);
+  getOrdersByEmail(email) {
+    return this.orders.filter((order) => order.email === email);
   },
   // Change code above this line
 };
 
-customer.setDiscount(0.15);
-console.log(customer.getDiscount()); // 0.15
-customer.addOrder(5000, "Steak");
-console.log(customer.getBalance()); // 19750
-console.log(customer.getOrders()); // ["Burger", "Pizza", "Salad", "Steak"]
+console.log(historyService.getOrdersLog());
