@@ -1,9 +1,14 @@
 body {
-    box-sizing: border-box;
     color: #ffa600;
     background-color: #3d3d3d;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
+    padding: 0;
+    margin: 0;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 ul {
@@ -20,7 +25,7 @@ a:hover {
     text-decoration: underline;
 }
 
-.counter {
+.counter__link--wrapper {
     position: relative;
     display: inline-block;
 
@@ -32,7 +37,7 @@ a:hover {
 
 }
 
-.counter::after {
+.counter__link--wrapper::after {
     content: '';
     position: absolute;
     top: 0;
@@ -53,23 +58,20 @@ a:hover {
     opacity: 0;
 }
 
-.counter:hover::after {
+.counter__link--wrapper:hover::after {
     right: 0;
     opacity: 1;
-
-
 }
 
-.counter:hover .counter-inner {
+.counter__link--wrapper:hover .counter__link {
     color: #ffa600;
     text-decoration: none;
 }
 
-.counter-inner {
+.counter__link {
     color: rgb(0, 219, 219);
     margin-top: 7px;
     display: inline-block;
-
 }
 
 .shop__list {
@@ -87,4 +89,86 @@ a:hover {
 
 .callback__list {
     margin-bottom: 30px;
+}
+
+/* Counter */
+
+.counter__list {
+    border-radius: 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+
+    background-color: #fff;
+
+    margin: 150px auto;
+    padding: 0;
+
+    width: 500px;
+    height: 100px;
+}
+
+.counter__item {
+    font-size: 40px;
+    color: darkolivegreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 33%;
+    height: 85px;
+}
+
+.operator {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+
+    transition: all 500ms cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.operator:hover {
+    color: coral;
+}
+
+.number {
+    border-right: 1px solid rgb(187, 187, 187);
+    border-left: 1px solid rgb(187, 187, 187);
+}
+
+.red {
+    color: red
+}
+
+.blue {
+    color: blue
+}
+
+.yellow {
+    color: yellow
+}
+
+.pink {
+    color: pink
+}
+
+.green {
+    color: green
+}
+
+.teal {
+    color: teal
+}
+
+.gray {
+    color: gray
+}
+
+.gold {
+    color: gold
+}
+
+.orange {
+    color: orange
 }
