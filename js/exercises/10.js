@@ -1,49 +1,63 @@
-class Storage {
-  constructor(items) {
-    this.items = items;
+class StringBuilder {
+  constructor(initialValue) {
+    this.value = initialValue;
   }
 
-  getItems() {
-    return this.items;
+  getValue() {
+    return this.value;
   }
 
-  addItem(newItem) {
-    this.items.push(newItem);
+  padEnd(str) {
+    // const arr = this.value.split("");
+    // arr.push(str);
+    // this.value = arr.join("");
+
+    this.value += str;
   }
 
-  removeItem(itemToRemove) {
-    this.items.splice(
-      this.items.findIndex((item) => item === itemToRemove),
-      1
-    );
+  padStart(str) {
+    // const arr = this.value.split("");
+    // arr.unshift(str);
+    // this.value = arr.join("");
+
+    this.value = str + this.value;
+  }
+
+  padBoth(str) {
+    // const arr = this.value.split("");
+    // arr.push(str);
+    // arr.unshift(str);
+    // this.value = arr.join("");
+
+    this.value = str + this.value + str;
   }
 }
 
 // Change code above this line
-const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
-storage.addItem("Droid");
-console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
-storage.removeItem("Prolonger");
-console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+const builder = new StringBuilder(".");
+console.log(builder.getValue()); // "."
+builder.padStart("^");
+console.log(builder.getValue()); // "^."
+builder.padEnd("^");
+console.log(builder.getValue()); // "^.^"
+builder.padBoth("=");
+console.log(builder.getValue()); // "=^.^="
 
 /* 
 *
-Завдання 10/20
+Завдання 11/20
 
-Напиши клас Storage, який буде створювати об'єкти для управління складом товарів. Клас очікує тільки один аргумент - початковий масив товарів, який записується у властивість items об'єкта, що створюється.
+Напиши клас StringBuilder, який приймає один параметр initialValue - довільний рядок, який записується у властивість value об'єкта, що створюється.
 
 Оголоси наступні методи класу:
 
-getItems() - повертає масив поточних товарів у властивості items об'єкта, який викликає цей метод.
+getValue() - повертає поточне значення властивості value.
 
-addItem(newItem) - приймає новий товар newItem і додає його в масив товарів у властивості items об'єкта, який викликає цей метод.
+padEnd(str) - отримує параметр str (рядок) і додає його в кінець значення властивості value об'єкта, який викликає цей метод.
 
-removeItem(itemToRemove) - приймає товар itemToRemove і видаляє його з масиву товарів у властивості items об'єкта, який викликає цей метод.
+padStart(str) - отримує параметр str (рядок) і додає його на початок значення властивості value об'єкта, який викликає цей метод.
 
-
-Під коментарем ми додали ініціалізацію екземпляра і виклики методів у тій послідовності, в якій твій код перевірятимуть тести. Будь ласка, нічого там не змінюй.
-
+padBoth(str) - отримує параметр str (рядок) і додає його на початок і в кінець значення властивості value об'єкта, який викликає цей метод.
 */
 
-//    hw 5 ex 5
+//    hw 5 ex 11
