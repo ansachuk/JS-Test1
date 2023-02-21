@@ -1,40 +1,35 @@
 class Car {
+  static #MAX_PRICE = 50000;
   // Change code below this line
-  static MAX_PRICE = 50000;
 
-  #price;
-  constructor({ price }) {
-    this.#price = price;
+  static checkPrice(price) {
+    return price > Car.#MAX_PRICE
+      ? "Error! Price exceeds the maximum"
+      : "Success! Price is within acceptable limits";
   }
 
-  get price() {
-    return this.#price;
-  }
-
-  set price(newPrice) {
-    if (newPrice <= Car.MAX_PRICE) {
-      this.#price = newPrice;
-    }
-  }
   // Change code above this line
+  constructor({ price }) {
+    this.price = price;
+  }
 }
 
-const audi = new Car({ price: 35000 });
-console.log(audi.price); // 35000
+const audi = new Car({ price: 36000 });
+const bmw = new Car({ price: 64000 });
 
-audi.price = 49000;
-console.log(audi.price); // 49000
+console.log(Car.checkPrice(audi.price)); // "Success! Price is within acceptable limits"
+console.log(Car.checkPrice(bmw.price)); // "Error! Price exceeds the maximum"
 
-audi.price = 51000;
-console.log(audi.price); // 49000
+/**Завдання 17/20
 
-/* 
-*
-Завдання 16/20
+Додай класу Car публічний статичний метод checkPrice (price), що приймає ціну автомобіля. Метод повинен порівняти значення параметра price і приватної статичного властивості MAX_PRICE.
 
-Виконай рефакторинг класу Car. Додай публічну статичну властивість MAX_PRICE зі значенням 50000 - максимально допустима ціна автомобіля.
+Якщо ціна автомобіля перевищує максимальну, метод повинен повернути рядок "Error! Price exceeds the maximum".
+В іншому випадку метод повинен повернути рядок "Success! Price is within acceptable limits".
+Під оголошенням класу ми додали ініціалізацію екземпляра і виклики методів, щоб показати, як буде використовуватися метод checkPrice(price).
 
-Додай сетеру price перевірку значення параметра newPrice, що передається. Якщо воно більше за MAX_PRICE, сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну автомобіля.
-*/
+ТЕСТИ
 
-//    hw 5 ex 11
+ */
+
+//    hw 5 ex 17
