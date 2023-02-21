@@ -1,63 +1,40 @@
-class StringBuilder {
-  constructor(initialValue) {
-    this.value = initialValue;
+class Car {
+  // Change code below this line
+  static MAX_PRICE = 50000;
+
+  #price;
+  constructor({ price }) {
+    this.#price = price;
   }
 
-  getValue() {
-    return this.value;
+  get price() {
+    return this.#price;
   }
 
-  padEnd(str) {
-    // const arr = this.value.split("");
-    // arr.push(str);
-    // this.value = arr.join("");
-
-    this.value += str;
+  set price(newPrice) {
+    if (newPrice <= Car.MAX_PRICE) {
+      this.#price = newPrice;
+    }
   }
-
-  padStart(str) {
-    // const arr = this.value.split("");
-    // arr.unshift(str);
-    // this.value = arr.join("");
-
-    this.value = str + this.value;
-  }
-
-  padBoth(str) {
-    // const arr = this.value.split("");
-    // arr.push(str);
-    // arr.unshift(str);
-    // this.value = arr.join("");
-
-    this.value = str + this.value + str;
-  }
+  // Change code above this line
 }
 
-// Change code above this line
-const builder = new StringBuilder(".");
-console.log(builder.getValue()); // "."
-builder.padStart("^");
-console.log(builder.getValue()); // "^."
-builder.padEnd("^");
-console.log(builder.getValue()); // "^.^"
-builder.padBoth("=");
-console.log(builder.getValue()); // "=^.^="
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
+
+audi.price = 49000;
+console.log(audi.price); // 49000
+
+audi.price = 51000;
+console.log(audi.price); // 49000
 
 /* 
 *
-Завдання 11/20
+Завдання 16/20
 
-Напиши клас StringBuilder, який приймає один параметр initialValue - довільний рядок, який записується у властивість value об'єкта, що створюється.
+Виконай рефакторинг класу Car. Додай публічну статичну властивість MAX_PRICE зі значенням 50000 - максимально допустима ціна автомобіля.
 
-Оголоси наступні методи класу:
-
-getValue() - повертає поточне значення властивості value.
-
-padEnd(str) - отримує параметр str (рядок) і додає його в кінець значення властивості value об'єкта, який викликає цей метод.
-
-padStart(str) - отримує параметр str (рядок) і додає його на початок значення властивості value об'єкта, який викликає цей метод.
-
-padBoth(str) - отримує параметр str (рядок) і додає його на початок і в кінець значення властивості value об'єкта, який викликає цей метод.
+Додай сетеру price перевірку значення параметра newPrice, що передається. Якщо воно більше за MAX_PRICE, сеттер нічого не робить, а якщо менше або дорівнює, то перезаписує ціну автомобіля.
 */
 
 //    hw 5 ex 11
