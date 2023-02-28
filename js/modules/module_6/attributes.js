@@ -1,16 +1,16 @@
 const photos = [
   {
-    src: "https://picsum.photos/200",
+    src: "https://picsum.photos/200?random=1",
     alt: "1",
   },
 
   {
-    src: "https://picsum.photos/200",
+    src: "https://picsum.photos/200?random=2",
     alt: "2",
   },
 
   {
-    src: "https://picsum.photos/200",
+    src: "https://picsum.photos/200?random=3",
     alt: "3",
   },
 ];
