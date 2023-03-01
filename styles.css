@@ -1,6 +1,15 @@
+:root {
+    --accent-color: #ffa600;
+    --main-bg-color: #3d3d3d;
+
+    /* <--anima--> */
+
+
+}
+
 body {
-    color: #ffa600;
-    background-color: #3d3d3d;
+    color: var(--accent-color);
+    background-color: var(--main-bg-color);
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
     padding: 0 20px;
@@ -36,7 +45,7 @@ a:hover {
     height: 30px;
     text-align: center;
     border-radius: 15px;
-    border: 1px solid #ffa600;
+    border: 1px solid var(--accent-color);
 
 }
 
@@ -67,7 +76,7 @@ a:hover {
 }
 
 .counter__link--wrapper:hover .counter__link {
-    color: #ffa600;
+    color: var(--accent-color);
     text-decoration: none;
 }
 
