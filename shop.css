@@ -7,9 +7,18 @@ body,
 ul,
 h1,
 h2,
-h3 {
+img,
+h3,
+li,
+p {
     margin: 0;
     padding: 0;
+}
+
+img {
+    display: block;
+    width: 100%;
+    overflow: hidden;
 }
 
 header {
@@ -67,5 +76,56 @@ header>.container {
 /* --------- PRODUCT LIST --------- */
 
 .products__list {
+    margin: 0 auto;
+
     display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.product__item {
+    list-style: none;
+    width: 33%;
+
+    border-radius: 5px;
+}
+
+.product__item--img {
+    margin-bottom: 15px;
+}
+
+.product__item--title {
+    margin-left: 15px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-decoration: solid;
+}
+
+.product__item--wrapper {
+    outline: 1px solid rgba(255, 255, 255, 0.3);
+    position: relative;
+}
+
+.product__item--price {
+    color: red;
+    font-size: 20px;
+    margin-left: 15px;
+
+    padding-bottom: 15px;
+}
+
+.product__item--btn {
+    position: absolute;
+    bottom: 23px;
+    right: 20px;
+
+    cursor: pointer;
+
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+}
+
+.product__item--btn:hover {
+    background-color: #fff;
 }
