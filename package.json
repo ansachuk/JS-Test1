@@ -1,0 +1,19 @@
+{
+  "name": "js-test",
+  "version": "1.0.0",
+  "description": "My js study project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansachuk/JS-Test.git"
+  },
+  "author": "ansachuk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ansachuk/JS-Test/issues"
+  },
+  "homepage": "https://github.com/ansachuk/JS-Test#readme"
+}
