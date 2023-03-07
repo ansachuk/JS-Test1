@@ -1,4 +1,5 @@
 const navigationRef = document.querySelector("nav");
+const productsListRef = document.querySelector(".products__list");
 
 navigationRef.addEventListener("click", navClickHandler);
 
