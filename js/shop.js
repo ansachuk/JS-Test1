@@ -214,3 +214,5 @@ function makeCategoryMarkup(arr = null) {
 
   productsListRef.innerHTML = markup;
 }
+
+makeCategoryMarkup(iphonesList);
