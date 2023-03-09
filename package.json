@@ -2,7 +2,7 @@
   "name": "js-test",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://ansachuk.github.io/JS-TEST",
+  "homepage": "https://ansachuk.github.io/JS-TEST/index.html",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /JS-TEST/"
