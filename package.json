@@ -1,23 +1,30 @@
 {
   "name": "js-test",
-  "version": "1.0.0",
-  "description": "My js study project",
-  "main": "index.js",
+  "version": "2.0.0",
+  "description": "",
+  "homepage": "https://ansachuk.github.io/JS-TEST",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node js/exercises/12.js"
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html --public-url /JS-TEST/"
   },
   "repository": {
-    "type": "module",
-    "url": "git+https://github.com/ansachuk/JS-Test.git"
+    "type": "git",
+    "url": "git+https://github.com/ansachuk/JS-TEST.git"
   },
-  "author": "ansachuk",
+  "keywords": [],
+  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ansachuk/JS-Test/issues"
+    "url": "https://github.com/ansachuk/JS-TEST/issues"
   },
-  "homepage": "https://github.com/ansachuk/JS-Test#readme",
   "dependencies": {
-    "validator": "^13.9.0"
-  }
+    "modern-normalize": "^1.1.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.0",
+    "parcel": "^2.6.0",
+    "parcel-reporter-clean-dist": "^1.0.4",
+    "posthtml-include": "^1.7.4"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
 }
