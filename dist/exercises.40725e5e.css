@@ -1,0 +1,151 @@
+:root {
+  --accent-color: #ffa600;
+  --main-bg-color: #3d3d3d;
+}
+
+body {
+  color: var(--accent-color);
+  background-color: var(--main-bg-color);
+  margin: 0;
+  padding: 0 20px;
+  font-family: Courier New, Courier, monospace;
+  font-weight: 700;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Courier New, Courier, monospace;
+}
+
+ul {
+  list-style: circle;
+}
+
+a {
+  color: #00dbdb;
+  text-decoration: none;
+  transition-property: color;
+  transition-duration: .7s;
+  transition-timing-function: cubic-bezier(.075, .82, .165, 1);
+}
+
+a:hover {
+  color: teal;
+  text-decoration: underline;
+}
+
+.counter__link--wrapper {
+  width: 140px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid var(--accent-color);
+  border-radius: 15px;
+  display: inline-block;
+  position: relative;
+}
+
+.counter__link--wrapper:after {
+  content: "";
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  background-color: teal;
+  border-radius: 15px;
+  transition-property: right, opacity;
+  transition-duration: .4s;
+  transition-timing-function: cubic-bezier(.075, .82, .165, 1);
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: -50%;
+}
+
+.counter__link--wrapper:hover:after {
+  opacity: 1;
+  right: 0;
+}
+
+.counter__link--wrapper:hover .counter__link {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+.counter__link {
+  color: #00dbdb;
+  margin-top: 7px;
+  display: inline-block;
+}
+
+.shop__list {
+  list-style: square;
+}
+
+.shop__item {
+  color: #00dbdb;
+}
+
+.shop__item:hover {
+  color: teal;
+  cursor: pointer;
+}
+
+.callback__list {
+  margin-bottom: 30px;
+}
+
+.counter__list {
+  width: 500px;
+  height: 100px;
+  background-color: #fff;
+  border-radius: 25px;
+  justify-content: center;
+  align-items: center;
+  margin: 150px auto;
+  padding: 0;
+  list-style: none;
+  display: flex;
+}
+
+.counter__item {
+  color: #556b2f;
+  width: 33%;
+  height: 85px;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  display: flex;
+}
+
+.operator {
+  cursor: pointer;
+  user-select: none;
+  transition: all .5s cubic-bezier(.215, .61, .355, 1);
+}
+
+.operator:hover {
+  color: coral;
+}
+
+.number {
+  border-left: 1px solid #bbb;
+  border-right: 1px solid #bbb;
+}
+
+.dom__image {
+  width: 400px;
+}
+
+.log-item {
+  border: 1px dashed #2a2a2a;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 16px;
+  position: relative;
+}
+
+.log-list li:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+/*# sourceMappingURL=exercises.40725e5e.css.map */

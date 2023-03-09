@@ -1,0 +1,37 @@
+.form {
+  width: 70%;
+  flex-direction: column;
+  margin: 0 auto 50px;
+  display: flex;
+}
+
+[name="name"], [name="age"] {
+  height: 30px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  font-size: 23px;
+}
+
+button {
+  width: 100px;
+  height: 30px;
+  color: #ffa600;
+  cursor: pointer;
+  background-color: teal;
+  border: none;
+  border-radius: 10px;
+  margin: 0 auto;
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.output {
+  text-align: center;
+}
+
+.wraper {
+  outline: 1px solid tomato;
+  display: flex;
+}
+
+/*# sourceMappingURL=11.fed8415e.css.map */
