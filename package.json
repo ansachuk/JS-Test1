@@ -4,7 +4,8 @@
   "description": "My js study project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node js/exercises/12.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/ansachuk/JS-Test/issues"
   },
-  "homepage": "https://github.com/ansachuk/JS-Test#readme"
+  "homepage": "https://github.com/ansachuk/JS-Test#readme",
+  "dependencies": {
+    "validator": "^13.9.0"
+  }
 }
