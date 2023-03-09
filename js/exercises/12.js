@@ -1,4 +1,5 @@
-import { iphonesList, ipadList } from "../shop-products";
+// import { iphonesList, ipadList } from "../shop-products";
 
 const validator = require("validator");
-console.log(iphonesList, ipadList);
+// console.log(iphonesList, ipadList);
+console.log(validator);

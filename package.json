@@ -8,7 +8,7 @@
     "start": "node js/exercises/12.js"
   },
   "repository": {
-    "type": "git",
+    "type": "module",
     "url": "git+https://github.com/ansachuk/JS-Test.git"
   },
   "author": "ansachuk",
